@@ -20,7 +20,7 @@ jobs:
     - name: Install dependencies
       run: npm install
       
-    - name: Fetch Data and Update eczane_data.json
+    - name: ilanları kontrol et
       run: |
         node index.js  # Script
         git add veri.json
