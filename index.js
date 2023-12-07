@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const baseUrl = 'https://www.patibul.com/2/kedi-ilanlari/';
 const toplamSayfa = 50;
-const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3';
+const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36';
 
 
 async function veriCek() {
