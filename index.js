@@ -4,8 +4,18 @@ const fs = require('fs');
 
 const baseUrl = 'https://www.patibul.com/2/kedi-ilanlari/';
 const toplamSayfa = 25;
-const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36';
+const userAgent =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36';
 
+const headers = {
+  'User-Agent': userAgent,
+  'Accept-Language': 'en-US,en;q=0.9',
+  'Accept-Encoding': 'gzip, deflate, br',
+  'Upgrade-Insecure-Requests': '1',
+  'DNT': '1',
+  'Connection': 'keep-alive',
+  'Cache-Control': 'max-age=0',
+};
 
 async function veriCek() {
   const anaVeriler = [];
@@ -14,7 +24,7 @@ async function veriCek() {
     const url = `${baseUrl}${sayfa}`;
 
     try {
-      const yanit = await axios.get(url, { headers: { 'User-Agent': userAgent } });
+      const yanit = await axios.get(url, { headers });
 
 
       if (yanit.status === 200) {
